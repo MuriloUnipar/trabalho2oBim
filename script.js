@@ -162,8 +162,14 @@ pagamentos.addEventListener("click", () => {
   const nivel = Number(document.querySelector('.nivel').value)
   const horas = Number(document.querySelector('.horas').value)
 
-  const salario = 0
-  const res = document.querySelector('.vendas span')
+  const salario = 
+    (nivel === 1
+    ? 12
+    : nivel === 2
+    ? 17
+    : 25) * horas * 4.5
 
-  res.textContent = `Valor a ser pago: ${valorFinal.toFixed(2)}R$`
+  const res = document.querySelector('.pagamentos span')
+
+  res.textContent = `Valor do salario: ${salario.toFixed(2)}R$`
 })
